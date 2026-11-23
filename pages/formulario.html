@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/periodico.png" type="image/png">
+    <img src="/img/periodico.png" alt="Logo ELCOMERCIO" width="70">
+    <title>ELCOMERCIO</title>
+</head>
+<body>
+    <header>
+        <img src="/img/periodico.png" alt="Logo ELCOMERCIO" width="70">
+        <h1 style="display: flex;justify-content: center;">  ELCOMERCIO </h1>
+        <p style="display: flex;justify-content: center;">Tu fuente de información confiable</p>
+    </header>
+        <hr>
+    <nav>
+        <a href="../index.html">Home</a> |
+        <a href="pages/formulario.html">Cuentanos tu historia aquí</a> |     
+    </nav>
+    <hr>
+    <br><br>
+    <form action="procesar_noticia.php" method="post" oninput="informacion.value = (nombres.value || apellidos.value) ? `${nombres.value} ${apellidos.value} (${edad.value || '?'} años)` : 'Sin datos ingresados'">
+        <fieldset>
+        <legend>Nombre del que reporta</legend>
+        <label for="nombres">Nombres completos:</label>
+        <input type="text" id="nombres" name="nombres" required><br><br>
+        <label for="apellidos">Apellidos completos:</label>
+        <input type="text" id="apellidos" name="apellidos" required><br><br>
+        <label for="ci">Cédula de identidad:</label>
+        <input type="text" id="ci" name="ci" required><br><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br><br>
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required>
+        <br><br>
+        <label for="direccion">Dirección domiciliaria:</label>
+        <input type="text" id="direccion" name="direccion" required> <br><br>
+        <label for="telefono">Teléfono de contacto:</label>
+        <input type="tel" id="telefono" name="telefono" required><br><br>
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" required><br><br>
+        </fieldset>
+        <fieldset>
+        <legend>Detalle de la noticia a contar</legend>
+        <label for="lugar">Dónde ocurrió:</label>
+        <input type="text" id="lugar" name="lugar" required><br><br>
+        <label for="fecha">Fecha del suceso:</label>
+        <input type="date" id="fecha" name="fecha" required><br><br>
+        <label for="descripcion">Descripción del suceso:</label>
+        <textarea id="descripcion" name="descripcion" rows="4" cols="50" required></textarea><br><br>
+        <label for="lugar">El suceso ocurrio fuera o dentro del país:</label>
+        <select id="lugar" name="tipo_sangre" required>
+            <option value="" disabled selected>Seleccione</option>
+            <option value="A+">DENTRO</option>
+            <option value="A-">FUERA</option>
+        </select><br><br>
+        <label for="archivo_adjunto">Adjuntar archivo de evidencia:</label>
+        <input type="file" id="archivo_adjunto" name="archivo_adjunto" accept=".pdf,.doc,.docx,.jpg,.png"><br><br>
+        </datalist><br><br>
+        </fieldset>
+        <fieldset>
+        <legend>Datos adicionales del suceso</legend>
+        <label for="testigos">Testigos del suceso (si los hay):</label>
+        <input type="text" id="testigos" name="testigos"><br><br>
+        <label for="autoridades">Autoridades involucradas (si las hay):</label>
+        <input type="text" id="autoridades" name="autoridades"><br><br>
+        <label for="impacto">Impacto del suceso en la comunidad:</label>
+        <textarea id="impacto" name="impacto" rows="4" cols="50"></textarea><br><br>
+        <label for="acciones">Acciones tomadas tras el suceso:</label>
+        <textarea id="acciones" name="acciones" rows="4" cols="50"></textarea><br><br>
+        <label for="imagen" name="imagen">Subir testimonios de lo acontecido (opcional):</label>
+        <input type="file" id="imagen" name="imagen" accept="image/*"><br><br>
+        </fieldset>
+        <fieldset>
+        <legend>Consentimiento y privacidad</legend>
+        <p>Al enviar este formulario, usted acepta que la información proporcionada sea utilizada para fines periodísticos y de investigación, respetando la privacidad de los involucrados.</p>
+        <input type="checkbox" id="consentimiento" name="consentimiento" required>
+        <label for="consentimiento">He leído y acepto los términos de privacidad y consentimiento.</label><br><br>
+        </fieldset>
+        <br><br>
+        <p>
+            <strong>Subir información:</strong>
+            <output name="informacion" for="">Sin datos ingresados</output>
+        </p>
+        <input type="submit" value="Guardar Noticia"><br><br>
+    </form>
+    <fieldset>
+        <legend>Información de contacto</legend>
+        <p>Teléfono: +593 2 123 4567</p>
+        <p>Correo electrónico: correo@example.com</p>
+        <p>Fecha: 2023-10-01</p>
+    </fieldset>
+</body>
+</html>
